@@ -587,26 +587,6 @@ function redirecionarCheckout() {
 </script>
 
 
-<script>
-function redirecionarComUTM() {
-  const baseCheckout = "https://www.pay-pagamentos.link/checkout/1338295b-a7b2-4e49-9f0b-78c873234d90";
-  const params = new URLSearchParams(window.location.search);
-  const utmParams = [
-    "utm_source", "utm_medium", "utm_campaign", 
-    "utm_content", "utm_term"
-  ];
-
-  let query = [];
-  utmParams.forEach(key => {
-    const value = params.get(key);
-    if (value) query.push(`${key}=${encodeURIComponent(value)}`);
-  });
-
-  const finalUrl = query.length > 0 ? `${baseCheckout}?${query.join("&")}` : baseCheckout;
-  window.location.href = finalUrl;
-}
-</script>
-
     <div class="resumo-container">
       <h2>RESUMO<br><span style="font-weight: 400;">da sua compra:</span></h2>
 
@@ -896,5 +876,6 @@ function redirecionarComUTM() {
 
 
 <footer style="background-color: #f9f9f9; padding: 30px 15px; text-align: left;"><div style="margin-bottom: 20px; text-align: left;"><img src="images/logo.png" alt="Logo Viva Sorte" style="max-height: 60px;"></div><div style="margin-bottom: 20px;"><img src="images/viva-hosp.png" alt="Informações do Rodapé" style="max-width: 100%; height: auto;"></div><div style="margin-bottom: 20px;"><img src="images/viacap.png" alt="Logos de parceiros" style="max-width: 100%; height: auto;"></div></footer>
+
 
 
